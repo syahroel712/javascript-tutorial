@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Intro</title>
+</head>
+
+<body>
+    <div id="demo">
+        <h2>Coba ganti text ini!!</h2>
+        <button type="button" onclick="loadDoc()">Ganti!!</button>
+    </div>
+    <script>
+        function loadDoc() {
+            // kunci utama dari ajax adalah XMLHttpRequest();
+            var xhttp = new XMLHttpRequest();
+            // onreadystatechange digunakan utuk menentukan function yang akan dipanggil ketika properti readyStae berubah
+            xhttp.onreadystatechange = function () {
+                // readyState utk :
+                // Memegang status XMLHttpRequest.
+                // 0: permintaan tidak diinisialisasi
+                // 1: koneksi server dibuat
+                // 2: permintaan diterima
+                // 3: memproses permintaan
+                // 4: permintaan selesai dan respons siap
+
+                // status utk :
+                // Mengembalikan status - nomor permintaan
+                // 200: "OK"
+                // 403: "Terlarang"
+                // 404 tidak ditemukan "
+                if (this.readyState == 4 && this.status == 200) {
+                    // responseText utk mengembalikan data respon sebagai string
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            // untuk melakukan request/permintaan ke server maka digunakan open() dan send()
+
+            // open(method, url, async, user, psw)
+            // method: the request type GET or POST
+            // url: the file location
+            // async :true(asynchronous) or false(synchronous)
+            // user: optional user name
+            // psw: optional password
+            xhttp.open('GET', "intro.txt", true);
+
+            // Sends the request to the server
+            // Used for GET requests
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>
