@@ -1,0 +1,19 @@
+[{
+    "nama": "adi",
+    "nrp": "9324923423",
+    "email": "adi@gmail.com",
+    "jurusan": "TI",
+    "idDosenWali": 1
+}, {
+    "nama": "ade",
+    "nrp": "3248288423",
+    "email": "adi@gmail.com",
+    "jurusan": "SI",
+    "idDosenWali": 2
+}, {
+    "nama": "ado",
+    "nrp": "9323422323",
+    "email": "ado@gmail.com",
+    "jurusan": "SK",
+    "idDosenWali": 2
+}]
